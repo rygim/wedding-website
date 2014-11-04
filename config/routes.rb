@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  resources :rsvps
+
   resources :guestbooks
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -6,6 +9,11 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'static_page#index'
+  get 'wedding_party', to: 'static_page#wedding_party'
+  get 'wedding_details', to: 'static_page#wedding_details'
+  get 'proposal', to: 'static_page#proposal'
+  get 'registry', to: 'static_page#registry'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

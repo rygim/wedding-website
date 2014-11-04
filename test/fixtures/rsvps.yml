@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  confirmation_code: MyString
+  can_attend: false
+  num_attending: 1
+
+two:
+  name: MyString
+  confirmation_code: MyString
+  can_attend: false
+  num_attending: 1

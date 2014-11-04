@@ -11,11 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141104012211) do
+ActiveRecord::Schema.define(version: 20141104021704) do
 
   create_table "guestbooks", force: true do |t|
     t.string   "name"
     t.text     "message"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "rsvps", force: true do |t|
+    t.string   "name"
+    t.string   "confirmation_code"
+    t.boolean  "can_attend"
+    t.integer  "num_attending"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

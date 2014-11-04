@@ -17,5 +17,5 @@ class StaticPageController < ApplicationController
 
   def registry
 
-  	end
+  end
 end

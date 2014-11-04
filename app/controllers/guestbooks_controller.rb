@@ -7,18 +7,9 @@ class GuestbooksController < ApplicationController
     @guestbooks = Guestbook.all.reverse
   end
 
-  # GET /guestbooks/1
-  # GET /guestbooks/1.json
-  def show
-  end
-
   # GET /guestbooks/new
   def new
     @guestbook = Guestbook.new
-  end
-
-  # GET /guestbooks/1/edit
-  def edit
   end
 
   # POST /guestbooks
@@ -28,24 +19,10 @@ class GuestbooksController < ApplicationController
 
     respond_to do |format|
       if @guestbook.save
-        format.html { redirect_to guestbooks_path, notice: 'Guestbook was successfully created.' }
+        format.html { redirect_to guestbooks_path, notice: 'Guestbook entry was successfully created.' }
         format.json { render :index, status: :created, location: @guestbook }
       else
         format.html { render :new }
-        format.json { render json: @guestbook.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /guestbooks/1
-  # PATCH/PUT /guestbooks/1.json
-  def update
-    respond_to do |format|
-      if @guestbook.update(guestbook_params)
-        format.html { redirect_to @guestbook, notice: 'Guestbook was successfully updated.' }
-        format.json { render :show, status: :ok, location: @guestbook }
-      else
-        format.html { render :edit }
         format.json { render json: @guestbook.errors, status: :unprocessable_entity }
       end
     end

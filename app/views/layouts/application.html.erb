@@ -12,9 +12,9 @@
   <div class="container-fluid">
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav" style='width: 100%; text-align:center;'>
-        <li style='float:none; display: inline-block;'><a href="#">Wedding Details</a></li>
-        <li style='float:none; display: inline-block;'><a href="#">Proposal</a></li>
-        <li style='float:none; display: inline-block;'><a href="#">Wedding Party</a></li>
+        <li style='float:none; display: inline-block;'><%= link_to "Wedding Details", wedding_details_path %></li>
+        <li style='float:none; display: inline-block;'><%= link_to "Proposal", proposal_path %></li>
+        <li style='float:none; display: inline-block;'><%= link_to "Wedding Party", wedding_party_path %></li>
         <div class="navbar-header" style='float:none; display: inline-block;'>
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
         <span class="sr-only">Toggle navigation</span>
@@ -24,8 +24,8 @@
       </button>
       <a class="navbar-brand" href="/" style="font-family: 'Pacifico', cursive; font-size: 2em;float:none; display: inline-block;"> Jill + Ryan</a>
     </div>
-        <li style='float:none; display: inline-block;'><a href="#">RSVP</a></li>
-        <li style='float:none; display: inline-block;'> <a href="#">Registry</a></li>
+        <li style='float:none; display: inline-block;'><%= link_to "RSVP", rsvps_path %></li>
+        <li style='float:none; display: inline-block;'><%= link_to "Registry", registry_path %></li>
         <li style='float:none; display: inline-block;'><%= link_to "Guestbook",  guestbooks_path %></li>
       </ul>
     </div>

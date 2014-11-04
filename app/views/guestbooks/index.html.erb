@@ -1,0 +1,23 @@
+
+<div class='container'>
+<div class='row'>
+
+<div class='col-lg-10' style="font-family: 'Pacifico', cursive; font-size: 3em;">Guestbook</div>
+<div class='col-lg-1'><%= link_to 'Write a Guestbook Entry', new_guestbook_path, :class => 'btn btn-default' %></div>
+</div>
+<br />
+
+    <% @guestbooks.each do |guestbook| %>
+
+      <div class='panel panel-default'>
+         <div class='panel-heading'>
+            <h3 class='panel-title'><%= guestbook.name %></h3>
+         </div>
+         <div class='panel-default'>
+         <div class='container'>
+            <p><%= guestbook.message %></p>
+            </div>
+         </div>
+      </div>
+    <% end %>
+</div>

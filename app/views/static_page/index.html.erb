@@ -28,17 +28,24 @@
 </div>  
 
 <div class='container'>
-<div class='page-header'>
-  <h1 style="font-family: 'Pacifico', cursive;">Wedding News</h1>
-</div>
+  <div class='page-header'>
+    <h1 style="font-family: 'Pacifico', cursive;">Wedding News</h1>
+  </div>
 
-<div class='panel panel-default'>
-<div class='panel-heading'>
-Getting the site up - Nov 3, 2014
-</div>
-<div class='panel-body'>
-  I am developing the site from scratch so hopefully you guys (and especially Jill, am I right? ;) ) think it is cool.  We don't have a date set so any references to any dates right now are just temporary
-</div>   
+<%= render partial: 'newsitem', 
+            locals: { 
+              :title => 'Guest List', 
+              :date => 'Nov 6, 2014', 
+              :news => "We have nailed down most of the wedding party and are finalizing the guest list now!  Things are moving along nicely :) --R"
+            }
+%>
 
+<%= render partial: 'newsitem', 
+            locals: { 
+              :title => 'Getting the site up', 
+              :date => 'Nov 3, 2014', 
+              :news => "I am developing the site from scratch so hopefully you guys (and especially Jill, am I right? ;) ) think it is cool.  We don't have a date set so any references to any dates right now are just temporary"
+            }
+%>
 
-</div>
+  

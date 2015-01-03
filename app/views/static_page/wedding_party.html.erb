@@ -5,6 +5,159 @@
 </div>
 
 <div class='container'>
- <p> Jill and Ryan are still deciding their final line-up.  This will be posted when they ask their wedding party and they accept/decline.</p>
-
+  <div class='col-lg-6'>
+      <h2 style="font-family: 'Pacifico', cursive;">
+        Jill
+      </h2>
+      <br />
+    <ul class='list-group'>
+      <%= render partial: 'weddingpartylistitem', 
+                    locals: { 
+                      :name => 'Jessica', 
+                      :role => 'Matron of Honor', 
+                      :description => 'Jessica and Jill are sisters, and Jessica has been Jill\'s best friend since birth.  She is always there for Jill and Jill is thrileed to have her as her matron of honor.'
+                    }
+        %>
+        <%= render partial: 'weddingpartylistitem', 
+                    locals: { 
+                      :name => 'Rosie', 
+                      :role => 'Bridesmaid', 
+                      :description => 'Rosie is Jill\'s cousin, but has also been one of her closest friends from sharing their first love for Leonardo DiCaprio to being in each other\'s wedding.'
+                    }
+        %>
+         <%= render partial: 'weddingpartylistitem', 
+                    locals: { 
+                      :name => 'Chrissy', 
+                      :role => 'Bridesmaid', 
+                      :description => 'Chrissy is Jill\'s cousin and with their families being so close, she was like another sister to Jill.'
+                    }
+        %>
+         <%= render partial: 'weddingpartylistitem', 
+                    locals: { 
+                      :name => 'Shauni', 
+                      :role => 'Bridesmaid', 
+                      :description => 'Shauni is Jill\'s cousin.  Jill says "she is my twin of the family except for her amazing ability to sing."'
+                    }
+        %>
+         <%= render partial: 'weddingpartylistitem', 
+                    locals: { 
+                      :name => 'Tammy', 
+                      :role => 'Bridesmaid', 
+                      :description => 'Tammy is Jill\'s Sister-in-Law.  When Tammy married Jill\'s brother Bobby, Jill was thrilled to be gaining another sister.  Jill said "She has been such a great addition to our family."'
+                    }
+        %>
+         <%= render partial: 'weddingpartylistitem', 
+                    locals: { 
+                      :name => 'Larissa', 
+                      :role => 'Bridesmaid + Future Sister-in-Law', 
+                      :description => 'Larissa is not only Jill\'s soon to be Sister-in-Law, she has been one of Jill\'s close friends.'
+                    }
+        %>
+         <%= render partial: 'weddingpartylistitem', 
+                    locals: { 
+                      :name => 'Ashley', 
+                      :role => 'Bridesmaid', 
+                      :description => 'Ashley was Jill\'s cheer buddy in college at SUNY Brockport.  She is someone with whom Jill shares a love for both cheerleading and Halloween.  Even though they don\'t see each other much since Jill moved to Virginia, they have been as close as ever.'
+                    }
+        %>
+         <%= render partial: 'weddingpartylistitem', 
+                    locals: { 
+                      :name => 'Christine', 
+                      :role => 'Bridesmaid', 
+                      :description => 'Christine has been Jill\'s best friend since sixth grade.  Christine hsa been there for Jill so mnuch over the years and Jill truly appreciates her long friendship.'
+                    }
+        %>
+         <%= render partial: 'weddingpartylistitem', 
+                    locals: {                       
+                      :name => 'Alyssa', 
+                      :role => 'Bridesmaid', 
+                      :description => 'Alyssa is Jill\'s best friend from high school.  Jill feels very lucky to have an amazing friend live so close to her after she moved away.'
+                    }
+        %>
+         <%= render partial: 'weddingpartylistitem', 
+                    locals: { 
+                      :name => 'Victoria', 
+                      :role => 'Bridesmaid', 
+                      :description => 'Costa is Jill\'s self-described partner in crime.  Jill has known Costa since her first year at SUNY Delhi and has been best friends ever since.'
+                    }
+        %>
+      </ul>
+  </div>
+  <div class='col-lg-6'>
+      <h2 style="font-family: 'Pacifico', cursive; font">
+        Ryan
+      </h2>
+      <br />
+      <ul class='list-group'>
+        <%= render partial: 'weddingpartylistitem', 
+                    locals: { 
+                      :name => 'Chris', 
+                      :role => 'Best Man', 
+                      :description => 'Chris and Ryan met while they were in High School in England.  They both bonded over coding, SOCOM, and soccer.  When Chris married Rosie, Ryan met Jill.  Therefore Chris is almost single-handedly responsible for the fact this wedding is happening.'
+                    }
+        %>
+        <%= render partial: 'weddingpartylistitem', 
+                    locals: { 
+                      :name => 'Matt', 
+                      :role => 'Groomsman', 
+                      :description => 'Matt and Ryan met at Cooper House at Virginia Tech.  Throughout both of their times there, they became friends by playing dodgeball, going to church, and playing golf together.'
+                    }
+        %>
+        <%= render partial: 'weddingpartylistitem', 
+                    locals: { 
+                      :name => 'Austin', 
+                      :role => 'Groomsman', 
+                      :description => 'Austin met in differential equations at VT, then through a mutual friend again, so they were destined to be best friends.  They moved up to NOVA at the same time, and Austin and his wife Erin were the fosters before Ryan and Jill got their dog, Radar.'
+                    }
+        %>
+        <%= render partial: 'weddingpartylistitem', 
+                    locals: { 
+                      :name => 'Grant', 
+                      :role => 'Groomsman', 
+                      :description => 'Grant and Ryan met at Virginia Tech and have been friends ever since.  They went on mission trips through the church group they were in, graduated from the ECE department together and have kept in touch ever since by trying to schedule board game weekends.'
+                    }
+        %><%= render partial: 'weddingpartylistitem', 
+                    locals: { 
+                      :name => 'Brandon', 
+                      :role => 'Groomsman', 
+                      :description => 'Brandon and Ryan worked together developing software and lived together for a year.  Now they live very close to each other and hang out regularly.'
+                    }
+        %>
+        <%= render partial: 'weddingpartylistitem', 
+                    locals: { 
+                      :name => 'Connor', 
+                      :role => 'Groomsman', 
+                      :description => 'Connor and Ryan lived together in Arlington for two years after being introduced to each other by their moms.  Connor and Ryan both like coding, video games, and biking around as much as possible.' 
+                    }
+        %>
+        <%= render partial: 'weddingpartylistitem', 
+                    locals: { 
+                      :name => 'Zac', 
+                      :role => 'Groomsman', 
+                      :description => 'Zac and Ryan met at Chris\' wedding.  Zac moved to Saipan for a year but we are thankful to have him back to be a part of the wedding.'
+                    }
+        %>
+        <%= render partial: 'weddingpartylistitem', 
+                    locals: { 
+                      :name => 'Nate', 
+                      :role => 'Groomsman', 
+                      :description => 'Nate is Ryan\'s cousin on his mom\'s side.  Ryan remembers playing with Nate when he was just a baby but now he is all grown up and goes to UPenn.'
+                    }
+        %>
+        <%= render partial: 'weddingpartylistitem', 
+                    locals: { 
+                      :name => 'Justin', 
+                      :role => 'Groomsman & Future Brother-in-Law', 
+                      :description => 'Justin is married to Jill\'s sister, Jessica, and first met Ryan at Chris\' (the best man\'s) wedding.  Justin is Ryan\'s future brother-in-law.  Ryan and Justin are both into football, magic cards, and hanging out with the J family'
+                    }
+        %>
+        <%= render partial: 'weddingpartylistitem', 
+                    locals: { 
+                      :name => 'Bobby', 
+                      :role => 'Groomsman', 
+                      :description => 'Bobby is Jill\'s brother and first met Ryan at Chris\' (the best man\'s) wedding.  Bobby is Ryan\'s future brother-in-law.'
+                    }
+        %>
+      </ul>
+  </div>
 </div>

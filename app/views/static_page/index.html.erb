@@ -32,6 +32,15 @@
     <h1 style="font-family: 'Pacifico', cursive;">Wedding News</h1>
   </div>
 
+
+<%= render partial: 'newsitem', 
+            locals: {   
+              :title => 'Wedding Party', 
+              :date => 'Jan 3, 2015', 
+              :news => "Our entire wedding party has been notified who they are, and their descriptions are now up on the wedding party page! --R"
+            }
+%>
+
 <%= render partial: 'newsitem', 
             locals: { 
               :title => 'Guest List', 
@@ -48,4 +57,4 @@
             }
 %>
 
-  
+  </div>

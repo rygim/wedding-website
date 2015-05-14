@@ -8,8 +8,8 @@
       <div class='row'>
         <div class='col-lg-8'>
         </div>
-        <div class='col-lg-4'>
-           <p style="font-family: 'Pacifico', cursive; font-size: 5em;height: 100px;">??? ?, 2015?</p>
+        <div class='col-lg-6'>
+           <p style="font-family: 'Pacifico', cursive; font-size: 5em;height: 100px;">October 31, 2015</p>
         </div>
       </div>
       <div class='row'>
@@ -32,6 +32,13 @@
     <h1 style="font-family: 'Pacifico', cursive;">Wedding News</h1>
   </div>
 
+<%= render partial: 'newsitem', 
+            locals: {   
+              :title => 'Location', 
+              :date => 'May 5, 2015', 
+              :news => "We have picked a location for the wedding!  It will be at <a href='http://www.beckerfarms.com/#!vizcarravineyards/cee5'>Becker Farms/Vizcarra Vineyards</a> on October 31, 2015.  Save the dates will be heading out soon!  --R"
+            }
+%>
 
 <%= render partial: 'newsitem', 
             locals: {   

@@ -1,5 +1,8 @@
-
-
+<div class='container'>
+  <div class='row'>
+    <div class='col-lg-12' style="font-family: 'Pacifico', cursive; font-size: 3em;">RSVP to the wedding!</div>
+  </div>
+<br />
 <%= form_for(@rsvp) do |f| %>
   <% if @rsvp.errors.any? %>
     <div id="error_explanation">
@@ -12,24 +15,15 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
   <div class="field">
     <%= f.label :confirmation_code %><br>
-    <%= f.text_field :confirmation_code %>
+    <%= f.text_field :confirmation_code, :class => 'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :can_attend %><br>
-    <%= f.check_box :can_attend %>
-  </div>
-  <div class="field">
-    <%= f.label :num_attending %><br>
-    <%= f.number_field :num_attending %>
-  </div>
+  <br />
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Start RSVP" %>
   </div>
 <% end %>
+
+
+</div>

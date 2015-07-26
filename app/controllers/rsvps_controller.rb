@@ -1,11 +1,50 @@
 class RsvpsController < ApplicationController
-  before_action :set_rsvp, only: [:show, :edit, :update, :destroy]
+  #before_action :set_rsvp, only: [:show, :edit, :update, :destroy]
 
-  # GET /rsvps
-  # GET /rsvps.json
-  def index
-    @rsvps = Rsvp.all
+  def enter_code
+    @rsvp = Rsvp.new
   end
+
+  def create
+    confirmation_code = params['rsvp']['confirmation_code'];
+     @rsvp = Rsvp.where({confirmation_code: confirmation_code}).first
+
+    respond_to do |format|
+      if @rsvp
+        format.html { redirect_to rsvp_update_rsvp_url(@rsvp.confirmation_code), notice: 'Please enter your rsvp code wedding.' }
+        format.json { render :index, status: :created, location: @rsvp }
+      else
+        format.html { redirect_to enter_code_path, error: 'Could not find rsvp with that code!'  }
+        format.json { render json: @rsvp.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def update_rsvp
+      @rsvp = Rsvp.where({confirmation_code: params[:rsvp_id]}).first
+  end
+
+  def update
+      @rsvp = Rsvp.find(params[:id])
+
+      @rsvp.has_responded = true
+
+    respond_to do |format|
+      if @rsvp.update(rsvp_params)
+        if @rsvp.can_attend 
+          format.html { redirect_to can_attend_path, notice: 'Successfully rsvped' }
+          format.json { render :index, status: :created, location: @rsvp }
+        else
+          format.html { redirect_to cannot_attend_path, notice: 'Successfully rsvped' }
+          format.json { render :index, status: :created, location: @rsvp }
+        end
+      else
+        format.html { redirect_to enter_code_path, error: 'Could not find rsvp with that code!'  }
+        format.json { render json: @rsvp.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
 
   # # GET /rsvps/1
   # # GET /rsvps/1.json
@@ -69,6 +108,6 @@ class RsvpsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def rsvp_params
-      params.require(:rsvp).permit(:name, :confirmation_code, :can_attend, :num_attending)
+      params.require(:rsvp).permit(:name, :confirmation_code, :can_attend, :num_attending, :messages)
     end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141104021704) do
+ActiveRecord::Schema.define(version: 20150726200304) do
 
   create_table "guestbooks", force: true do |t|
     t.string   "name"
@@ -27,6 +27,10 @@ ActiveRecord::Schema.define(version: 20141104021704) do
     t.integer  "num_attending"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "max_attending"
+    t.boolean  "has_responded"
+    t.string   "messages"
+    t.string   "real_name"
   end
 
 end

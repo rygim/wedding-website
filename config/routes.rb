@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :rsvps
 
   resources :guestbooks
 
@@ -13,6 +12,17 @@ Rails.application.routes.draw do
   get 'wedding_details', to: 'static_page#wedding_details'
   get 'proposal', to: 'static_page#proposal'
   get 'registry', to: 'static_page#registry'
+  get 'enter_code', to: 'rsvps#enter_code'
+  get 'can_attend', to: 'static_page#rsvp_can_attend'
+  get 'cannot_attend', to: 'static_page#rsvp_cannot_attend'
+  
+  resources :rsvps do
+    post 'find_code'
+    get 'update_rsvp'
+    post 'update'
+  end
+
+
 
 
   # Example of regular route:

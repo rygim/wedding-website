@@ -1,6 +1,10 @@
 class RsvpsController < ApplicationController
   #before_action :set_rsvp, only: [:show, :edit, :update, :destroy]
 
+  def index
+    redirect_to enter_code_path
+  end
+
   def enter_code
     @rsvp = Rsvp.new
   end

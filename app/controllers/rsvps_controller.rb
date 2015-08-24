@@ -37,7 +37,7 @@ class RsvpsController < ApplicationController
     respond_to do |format|
       if @rsvp.update(rsvp_params)
         if @rsvp.num_attending > @rsvp.max_attending
-          format.html { redirect_to rsvp_update_rsvp_url(@rsvp.confirmation_code), notice: 'You can only bring #{rsvp.max_attending} people.  If you feel this is in error, please contact Jill or Ryan.' }
+          format.html { redirect_to rsvp_update_rsvp_url(@rsvp.confirmation_code), notice: "You can only bring #{rsvp.max_attending} people.  If you feel this is in error, please contact Jill or Ryan." }
           format.json { render :index, status: :created, location: @rsvp }
         elsif @rsvp.can_attend 
           format.html { redirect_to can_attend_path, notice: 'Successfully rsvped' }

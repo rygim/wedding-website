@@ -7,18 +7,19 @@ class RsvpsController < ApplicationController
 
   def enter_code
     @rsvp = Rsvp.new
+    @error = flash[:error]
   end
 
   def create
     confirmation_code = params['rsvp']['confirmation_code'];
-     @rsvp = Rsvp.where({confirmation_code: confirmation_code}).first
+     @rsvp = Rsvp.where({confirmation_code: confirmation_code.upcase}).first
 
     respond_to do |format|
       if @rsvp
-        format.html { redirect_to rsvp_update_rsvp_url(@rsvp.confirmation_code), notice: 'Please enter your rsvp code wedding.' }
+        format.html { redirect_to rsvp_update_rsvp_url(@rsvp.confirmation_code), notice: 'Please enter your rsvp code.' }
         format.json { render :index, status: :created, location: @rsvp }
       else
-        format.html { redirect_to enter_code_path, error: 'Could not find rsvp with that code!'  }
+        format.html { redirect_to enter_code_path, notice: 'Could not find rsvp with that code!  If you entered your code correctly, just send the RSVP back in the envelope.  Otherwise, please try again.'  }
         format.json { render json: @rsvp.errors, status: :unprocessable_entity }
       end
     end

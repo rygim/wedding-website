@@ -34,6 +34,14 @@
 
 <%= render partial: 'newsitem', 
             locals: {   
+              :title => 'Invitations have gone out', 
+              :date => 'Aug 24, 2015', 
+              :news => "We have just sent out our invitiations.  Please watch your mail for the invite and either go to <a href='/enter_code'>this page to submit your RSVP</a>, or mail back the RSVP card."
+            }
+%>
+
+<%= render partial: 'newsitem', 
+            locals: {   
               :title => 'Location', 
               :date => 'May 5, 2015', 
               :news => "We have picked a location for the wedding!  It will be at <a href='http://www.beckerfarms.com/#!vizcarravineyards/cee5'>Becker Farms/Vizcarra Vineyards</a> on October 31, 2015.  Save the dates will be heading out soon!  --R"

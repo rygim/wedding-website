@@ -4,7 +4,14 @@
   </div>
 <br />
 
+<% if flash[:notice] %>
+<p class='error'>
+  <div class="alert alert-danger" role="alert">
+    <%= flash[:notice] %>
+  </div>
+</p>
 
+<% end %>
 
 <%= form_for(@rsvp) do |f| %>
   <% if @rsvp.errors.any? %>

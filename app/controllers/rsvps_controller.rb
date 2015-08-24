@@ -16,7 +16,7 @@ class RsvpsController < ApplicationController
 
     respond_to do |format|
       if @rsvp
-        format.html { redirect_to rsvp_update_rsvp_url(@rsvp.confirmation_code), notice: 'Please enter your rsvp code.' }
+        format.html { redirect_to rsvp_update_rsvp_url(@rsvp.confirmation_code) }
         format.json { render :index, status: :created, location: @rsvp }
       else
         format.html { redirect_to enter_code_path, notice: 'Could not find rsvp with that code!  If you entered your code correctly, just send the RSVP back in the envelope.  Otherwise, please try again.'  }
@@ -36,7 +36,10 @@ class RsvpsController < ApplicationController
 
     respond_to do |format|
       if @rsvp.update(rsvp_params)
-        if @rsvp.can_attend 
+        if @rsvp.num_attending > @rsvp.max_attending
+          format.html { redirect_to rsvp_update_rsvp_url(@rsvp.confirmation_code), notice: 'You can only bring #{@rsvp.max_attending} people.  If you feel this is in error, please contact Jill or Ryan.' }
+          format.json { render :index, status: :created, location: @rsvp }
+        elsif @rsvp.can_attend 
           format.html { redirect_to can_attend_path, notice: 'Successfully rsvped' }
           format.json { render :index, status: :created, location: @rsvp }
         else
